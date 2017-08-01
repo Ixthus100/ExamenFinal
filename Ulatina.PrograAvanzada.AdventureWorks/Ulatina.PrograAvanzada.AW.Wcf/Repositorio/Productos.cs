@@ -55,7 +55,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 		/// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
 		public IList<Model.Product> BuscarProductoFechaVencimiento(DateTime laFechaVencimiento)
 		{
-			var losProductos = _Contexto.Product.Where(p => laFechaVencimiento == p.DiscontinuedDate).ToList();
+			var losProductos = _Contexto.Product.Where(p => laFechaVencimiento <= p.DiscontinuedDate).ToList();
 			return losProductos;
 		}
 

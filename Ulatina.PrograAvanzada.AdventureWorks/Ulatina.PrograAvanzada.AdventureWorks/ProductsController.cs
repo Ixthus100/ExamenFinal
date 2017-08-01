@@ -25,8 +25,47 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(products.ToList());
         }
 
-        // GET: Products/Details/5
-        public ActionResult MisDetallesPorProductNumber(string productNumber)
+
+		//STHIF ARCE GUERRERO
+		/// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
+		public ActionResult MiListaPorCategoriaIndex()
+		{
+			string laCategoria = "Snack";
+
+			var laAccion = new AW.Wcf.Acciones.Productos();
+			var products = laAccion.BuscarProductoNombreCategoria(laCategoria);
+			return View(products.ToList());
+		}
+
+		/// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
+		public ActionResult MiListaPorFechaVencimientoIndex()
+		{
+			DateTime laFechaVencimiento = DateTime.Now.Date;
+
+			var laAccion = new AW.Wcf.Acciones.Productos();
+			var products = laAccion.BuscarProductoFechaVencimiento(laFechaVencimiento);
+			return View(products.ToList());
+		}
+
+		/// 7.  lista de artículos que contengan al menos un review.
+		public ActionResult MiListaContienenReviewIndex()
+		{
+
+			var laAccion = new AW.Wcf.Acciones.Productos();
+			var products = laAccion.BuscarProductoContengaReview();
+			return View(products.ToList());
+
+		}
+
+
+
+
+
+
+
+
+		// GET: Products/Details/5
+		public ActionResult MisDetallesPorProductNumber(string productNumber)
         {
             if (productNumber == null)
             {
