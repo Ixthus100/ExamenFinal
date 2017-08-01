@@ -48,7 +48,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 		public IList<Model.Product> BuscarProductoNombreCategoria(string laCategoria)
 		{
 
-			var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.ProductSubcategory.ProductCategory.Equals(laCategoria)).ToList();
+			var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.ProductSubcategory.ProductCategory.Name.Equals(laCategoria)).ToList();
 			return LosProductos;
 
 		}
@@ -63,7 +63,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 		public IList<Model.Product> BuscarProductoContengaReview()
 
 		{
-			var losProductos = _Contexto.Product.Include("ProductSubcategory").Include("ProductModel").Include("ProductReview").Include("ProductSubcategory.ProductCategory").Where(p => p.ProductReview != null).ToList();
+            var losProductos = _Contexto.Product.Join(_Contexto.ProductReview, product => product.ProductID, review => review.ProductID, (product, review) => product).ToList();
 			return losProductos;
 
 		}

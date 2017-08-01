@@ -30,7 +30,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
 		/// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
 		public ActionResult MiListaPorCategoriaIndex()
 		{
-			string laCategoria = "Snack";
+			string laCategoria = "Bikes";
 
 			var laAccion = new AW.Wcf.Acciones.Productos();
 			var products = laAccion.BuscarProductoNombreCategoria(laCategoria);
