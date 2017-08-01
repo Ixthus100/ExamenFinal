@@ -38,5 +38,36 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
             var losProductos = _Contexto.Product.Where(p => elPrecioInferior <= p.ListPrice && p.ListPrice <= elPrecioSuperior).ToList();
             return losProductos;
         }
-    }
+
+
+		//STHIF ARCE GUERRERO
+
+
+		/// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
+
+		public IList<Model.Product> BuscarProductoNombreCategoria(string laCategoria)
+		{
+
+			var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.ProductSubcategory.ProductCategory.Equals(laCategoria)).ToList();
+			return LosProductos;
+
+		}
+		/// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
+		public IList<Model.Product> BuscarProductoFechaVencimiento(DateTime laFechaVencimiento)
+		{
+			var losProductos = _Contexto.Product.Where(p => laFechaVencimiento == p.DiscontinuedDate).ToList();
+			return losProductos;
+		}
+
+		/// 7.  lista de artículos que contengan al menos un review
+		public IList<Model.Product> BuscarProductoContengaReview()
+
+		{
+			var losProductos = _Contexto.Product.Include("ProductSubcategory").Include("ProductModel").Include("ProductReview").Include("ProductSubcategory.ProductCategory").Where(p => p.ProductReview != null).ToList();
+			return losProductos;
+
+		}
+
+
+	}
 }

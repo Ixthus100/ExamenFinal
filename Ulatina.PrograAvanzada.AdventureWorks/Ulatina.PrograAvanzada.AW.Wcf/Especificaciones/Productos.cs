@@ -22,5 +22,33 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Especificaciones
             var losProductos = elRepositorio.BuscarProductoPorRangoDePrecio(elPrecioInferior, elPrecioSuperior);
             return losProductos;
         }
-    }
+
+
+
+		//STHIF ARCE GUERRERO
+
+
+		public IList<Model.Product> BuscarProductoNombreCategoria(string elCategoria)
+		{
+			var elRepositorio = new Repositorio.Productos();
+			var losProductos = elRepositorio.BuscarProductoNombreCategoria(elCategoria);
+			return losProductos;
+		}
+		public IList<Model.Product> BuscarProductoFechaVencimiento(DateTime laFechaVencimiento)
+		{
+			var elRepositorio = new Repositorio.Productos();
+			var losProductos = elRepositorio.BuscarProductoFechaVencimiento(laFechaVencimiento);
+			return losProductos;
+		}
+
+		public IList<Model.Product> BuscarProductoContengaReview()
+		{
+			var elRepositorio = new Repositorio.Productos();
+			var losProductos = elRepositorio.BuscarProductoContengaReview();
+			return losProductos;
+		}
+
+
+
+	}
 }

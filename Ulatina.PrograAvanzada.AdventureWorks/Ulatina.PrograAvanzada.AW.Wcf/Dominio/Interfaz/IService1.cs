@@ -29,7 +29,26 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
         [OperationContract]
         IList <Model.Product> BuscarProductoPorRangoDePrecio(decimal elPrecioInferior, decimal elPrecioSuperior);
 
-    }
+
+		//STHIF ARCE GUERRERO
+
+		/// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
+
+		[OperationContract]
+		IList<Model.Product> BuscarProductoFechaVencimiento(DateTime elFechaVencimiento);
+
+		/// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
+		[OperationContract]
+		IList<Model.Product> BuscarProductoNombreCategoria(string elCategoria);
+
+		/// 7.  lista de artículos que contengan al menos un review.
+		[OperationContract]
+		IList<Model.Product> BuscarProductoContegaReview();
+
+
+
+
+	}
 
 
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

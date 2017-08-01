@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Ulatina.PrograAvanzada.AW.Model;
 
 namespace Ulatina.PrograAvanzada.AW.Wcf
 {
@@ -34,7 +35,34 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
             return losProductos;
         }
 
-        public string GetData(int value)
+		//STHIF ARCE GUERRERO
+		public IList<Model.Product> BuscarProductoFechaVencimiento(DateTime LaFechaVencimiento)
+		{
+			var laAccion = new Acciones.Productos();
+			var losProductos = laAccion.BuscarProductoFechaVencimiento(LaFechaVencimiento);
+			return losProductos;
+		}
+		public IList<Model.Product> BuscarProductoNombreCategoria(string elCategoria)
+		{
+			var laAccion = new Acciones.Productos();
+			var losProductos = laAccion.BuscarProductoNombreCategoria(elCategoria);
+			return losProductos;
+		}
+
+		public IList<Model.Product> BuscarProductoContengaReview()
+		{
+			var laAccion = new Acciones.Productos();
+			var losProductos = laAccion.BuscarProductoContengaReview();
+			return losProductos;
+		}
+
+
+
+
+
+
+
+		public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }
@@ -51,5 +79,10 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
             }
             return composite;
         }
-    }
+
+		public IList<Product> BuscarProductoContegaReview()
+		{
+			throw new NotImplementedException();
+		}
+	}
 }
