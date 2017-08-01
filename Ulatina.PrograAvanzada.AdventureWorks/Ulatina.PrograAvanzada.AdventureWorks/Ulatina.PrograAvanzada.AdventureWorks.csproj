@@ -265,6 +265,9 @@
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\MisDetallesPorProductNumber.cshtml" />
+    <Content Include="Views\Products\MiListaPorCategoriaIndex.cshtml" />
+    <Content Include="Views\Products\MiListaPorFechaVencimientoIndex.cshtml" />
+    <Content Include="Views\Products\MiListaContienenReviewIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
