@@ -29,26 +29,41 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
         [OperationContract]
         IList <Model.Product> BuscarProductoPorRangoDePrecio(decimal elPrecioInferior, decimal elPrecioSuperior);
 
+            //JOSE CHAVES
+            /// 1.  Lista de artículos que contienen una hilera determinada en el nombre.
+        [OperationContract]
+        IList<Model.Product> EncontrarProductosPorHileraNombre(string laHilera);
 
-		//STHIF ARCE GUERRERO
-
-		/// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
-
-		[OperationContract]
+        //STHIF ARCE GUERRERO
+        /// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
+        [OperationContract]
 		IList<Model.Product> BuscarProductoFechaVencimiento(DateTime elFechaVencimiento);
 
-		/// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
-		[OperationContract]
+        //PABLO FERNANDEZ
+        /// 3.  Lista de artículos de un color determinado
+        
+
+
+        //JOSE CHAVES 
+        /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
+        [OperationContract]
+        IList<Model.Product> EncontrarProductosPorHileraSubcategoria(string laHilera);
+
+        //STHIF ARCE GUERRERO
+        /// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
+        [OperationContract]
 		IList<Model.Product> BuscarProductoNombreCategoria(string elCategoria);
 
-		/// 7.  lista de artículos que contengan al menos un review.
-		[OperationContract]
+        //PABLO FERNANDEZ
+        /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
+        
+
+
+        //STHIF ARCE GUERRERO
+        /// 7.  lista de artículos que contengan al menos un review.
+        [OperationContract]
 		IList<Model.Product> BuscarProductoContegaReview();
-
-
-
-
-	}
+    }
 
 
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.

@@ -25,30 +25,61 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
             return View(products.ToList());
         }
 
+        //JOSE CHAVES
+        /// 1. Lista de artículos que contienen una hilera determinada en el nombre.
+        public ActionResult MiListaPorNombreIndex()
+        {
+            string laHilera = "Bike";
+            var laAccion = new AW.Wcf.Acciones.Productos();
+            var products = laAccion.EncontrarProductoPorHileraNombre(laHilera);
+            return View(products.ToList());
+        }
 
-		//STHIF ARCE GUERRERO
-		/// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
-		public ActionResult MiListaPorCategoriaIndex()
+        //STHIF ARCE GUERRERO
+        /// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
+        public ActionResult MiListaPorFechaVencimientoIndex()
+        {
+            DateTime laFechaVencimiento = DateTime.Now.Date;
+
+            var laAccion = new AW.Wcf.Acciones.Productos();
+            var products = laAccion.BuscarProductoFechaVencimiento(laFechaVencimiento);
+            return View(products.ToList());
+        }
+
+        //PABLO FERNANDEZ
+        /// 3.  Lista de artículos de un color determinado
+
+
+
+        //JOSE CHAVES 
+        /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
+        public ActionResult MiListaPorNombreSubcategoriaIndex()
+        {
+            string laHilera = "Mountain";
+            var laAccion = new AW.Wcf.Acciones.Productos();
+            var products = laAccion.EncontrarProductosPorHileraSubcategoria(laHilera);
+            return View(products.ToList());
+        }
+
+        //STHIF ARCE GUERRERO
+        /// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
+        public ActionResult MiListaPorCategoriaIndex()
 		{
-			string laCategoria = "Bikes";
+			string laCategoria = "Bike";
 
 			var laAccion = new AW.Wcf.Acciones.Productos();
 			var products = laAccion.BuscarProductoNombreCategoria(laCategoria);
 			return View(products.ToList());
 		}
 
-		/// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
-		public ActionResult MiListaPorFechaVencimientoIndex()
-		{
-			DateTime laFechaVencimiento = DateTime.Now.Date;
+        //PABLO FERNANDEZ
+        /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
+        
 
-			var laAccion = new AW.Wcf.Acciones.Productos();
-			var products = laAccion.BuscarProductoFechaVencimiento(laFechaVencimiento);
-			return View(products.ToList());
-		}
 
-		/// 7.  lista de artículos que contengan al menos un review.
-		public ActionResult MiListaContienenReviewIndex()
+        //STHIF ARCE GUERRERO
+        /// 7.  lista de artículos que contengan al menos un review.
+        public ActionResult MiListaContienenReviewIndex()
 		{
 
 			var laAccion = new AW.Wcf.Acciones.Productos();

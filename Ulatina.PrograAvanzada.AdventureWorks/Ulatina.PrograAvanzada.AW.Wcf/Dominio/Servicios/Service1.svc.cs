@@ -35,30 +35,61 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
             return losProductos;
         }
 
-		//STHIF ARCE GUERRERO
-		public IList<Model.Product> BuscarProductoFechaVencimiento(DateTime LaFechaVencimiento)
+        //JOSE CHAVES
+        /// 1.  Lista de artículos que contienen una hilera determinada en el nombre.
+        public IList<Product> EncontrarProductosPorHileraNombre(string laHilera)
+        {
+            var laAccion = new Acciones.Productos();
+            var elProducto = laAccion.EncontrarProductoPorHileraNombre(laHilera);
+            return elProducto;
+        }
+
+        //STHIF ARCE GUERRERO
+        /// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
+        public IList<Model.Product> BuscarProductoFechaVencimiento(DateTime LaFechaVencimiento)
 		{
 			var laAccion = new Acciones.Productos();
 			var losProductos = laAccion.BuscarProductoFechaVencimiento(LaFechaVencimiento);
 			return losProductos;
 		}
-		public IList<Model.Product> BuscarProductoNombreCategoria(string elCategoria)
+        //PABLO FERNANDEZ
+        /// 3.  Lista de artículos de un color determinado
+
+
+
+        //JOSE CHAVES 
+        /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
+        public IList<Product> EncontrarProductosPorHileraSubcategoria(string laHilera)
+        {
+            var laAccion = new Acciones.Productos();
+            var elProducto = laAccion.EncontrarProductosPorHileraSubcategoria(laHilera);
+            return elProducto;
+        }
+
+        //STHIF ARCE GUERRERO
+        /// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
+        public IList<Model.Product> BuscarProductoNombreCategoria(string elCategoria)
 		{
 			var laAccion = new Acciones.Productos();
 			var losProductos = laAccion.BuscarProductoNombreCategoria(elCategoria);
 			return losProductos;
 		}
 
-		public IList<Model.Product> BuscarProductoContengaReview()
+        //PABLO FERNANDEZ
+        /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
+
+
+
+        //STHIF ARCE GUERRERO
+        /// 7.  lista de artículos que contengan al menos un review.
+        public IList<Model.Product> BuscarProductoContengaReview()
 		{
 			var laAccion = new Acciones.Productos();
 			var losProductos = laAccion.BuscarProductoContengaReview();
 			return losProductos;
 		}
 
-
-
-
+        
 
 
 

@@ -13,10 +13,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ProductModel.Name)
+            Model
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductSubcategory.Name)
+            Subcategory
+        </th>
+        <th>
+            Category
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -25,19 +28,7 @@
             @Html.DisplayNameFor(model => model.ProductNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MakeFlag)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FinishedGoodsFlag)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SafetyStockLevel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReorderPoint)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StandardCost)
@@ -47,27 +38,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SizeUnitMeasureCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WeightUnitMeasureCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Weight)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DaysToManufacture)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductLine)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Class)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Style)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SellStartDate)
@@ -96,25 +66,16 @@
             @Html.DisplayFor(modelItem => item.ProductSubcategory.Name)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ProductSubcategory.ProductCategory.Name)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProductNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MakeFlag)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FinishedGoodsFlag)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Color)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SafetyStockLevel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReorderPoint)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StandardCost)
@@ -124,27 +85,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Size)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SizeUnitMeasureCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WeightUnitMeasureCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Weight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DaysToManufacture)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductLine)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Class)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Style)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SellStartDate)
