@@ -39,9 +39,10 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
         [OperationContract]
 		IList<Model.Product> BuscarProductoFechaVencimiento(DateTime elFechaVencimiento);
 
-        //PABLO FERNANDEZ
+        //PAULO FERNANDEZ
         /// 3.  Lista de artículos de un color determinado
-        
+        [OperationContract]
+        IList<Model.Product> BuscarProductoPorColorDeterminado(string _elColor);
 
 
         //JOSE CHAVES 
@@ -54,10 +55,10 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
         [OperationContract]
 		IList<Model.Product> BuscarProductoNombreCategoria(string elCategoria);
 
-        //PABLO FERNANDEZ
+        //PAULO FERNANDEZ
         /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
-        
-
+        [OperationContract]
+        IList<Model.Product> EncontrarProductosPorModelo(string _laHilera);
 
         //STHIF ARCE GUERRERO
         /// 7.  lista de artículos que contengan al menos un review.

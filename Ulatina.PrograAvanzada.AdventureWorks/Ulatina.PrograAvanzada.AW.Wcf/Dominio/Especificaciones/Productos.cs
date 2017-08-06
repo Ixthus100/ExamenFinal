@@ -23,7 +23,6 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Especificaciones
             return losProductos;
         }
 
-
         //JOSE CHAVES
         /// 1.  Lista de artículos que contienen una hilera determinada en el nombre.
         public IList<Model.Product> EncontrarProductoPorHileraNombre(string laHilera)
@@ -42,10 +41,14 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Especificaciones
             return losProductos;
         }
 
-        //PABLO FERNANDEZ
+        //PAULO FERNANDEZ
         /// 3.  Lista de artículos de un color determinado
-
-
+        public IList<Model.Product> EncontarProductoPorColorDeterminado(string elColor)
+        {
+            var elRepositorio = new Repositorio.Productos();
+            var losProducto = elRepositorio.EncontarProductoPorColorDeterminado(elColor);
+            return losProducto;
+        }
 
         //JOSE CHAVES 
         /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
@@ -67,7 +70,12 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Especificaciones
 
         //PABLO FERNANDEZ
         /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
-
+        public IList<Model.Product> BuscarProductosPorModelo(string laHilera)
+        {
+            var elRepositorio = new Repositorio.Productos();
+            var losProductos = elRepositorio.BuscarPorductosPorModelo(laHilera);
+            return losProductos;
+        }
 
 
         //STHIF ARCE GUERRERO
@@ -79,7 +87,6 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Especificaciones
 			return losProductos;
 		}
 
-
-
-	}
+        
+    }
 }

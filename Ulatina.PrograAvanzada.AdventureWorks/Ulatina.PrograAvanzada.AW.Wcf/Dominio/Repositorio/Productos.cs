@@ -56,10 +56,16 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
             return losProductos;
         }
 
-        //PABLO FERNANDEZ
+        //PAULO FERNANDEZ
         /// 3.  Lista de artículos de un color determinado
+        public IList<Model.Product> EncontarProductoPorColorDeterminado(string elColor)
+        {
+            // Model.Product elProducto = new Model.Product();
+            var LosProductos = _Contexto.Product.Where(p => p.Color.Contains(elColor)).ToList();
+            //elProducto = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.p);
+            return LosProductos;
 
-
+        }
 
         //JOSE CHAVES 
         /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
@@ -83,7 +89,12 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 
         //PABLO FERNANDEZ
         /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
-        
+        public IList<Model.Product> BuscarPorductosPorModelo(string _modelo)
+        {
+            //var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.ProductSubcategory.ProductCategory.Name.Contains(_modelo)).ToList();
+            var LosProductos = _Contexto.Product.Include("productSubCategory").Include("ProductModel").Where(p => p.ProductModel.Name.Contains(_modelo)).ToList();
+            return LosProductos;
+        }
 
 
         //STHIF ARCE GUERRERO

@@ -41,10 +41,14 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
             return losProductos;
         }
 
-        //PABLO FERNANDEZ
+        //PAULO FERNANDEZ
         /// 3.  Lista de artículos de un color determinado
-
-
+        public IList<Model.Product> EncontarProductoPorColorDeterminado(string elColor)
+        {
+            var laEspecificacion = new Especificaciones.Productos();
+            var losProducto = laEspecificacion.EncontarProductoPorColorDeterminado(elColor);
+            return losProducto;
+        }
 
         //JOSE CHAVES 
         /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
@@ -66,7 +70,12 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
 
         //PABLO FERNANDEZ
         /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
-
+        public IList<Model.Product> EncontarProductosPorModelo(string laHilera)
+        {
+            var laEspecificacion = new Especificaciones.Productos();
+            var losProductos = laEspecificacion.BuscarProductosPorModelo(laHilera);
+            return losProductos;
+        }
 
 
         //STHIF ARCE GUERRERO
@@ -79,8 +88,6 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
 
 		}
 
-
-
-
-	}
+        
+    }
 }
