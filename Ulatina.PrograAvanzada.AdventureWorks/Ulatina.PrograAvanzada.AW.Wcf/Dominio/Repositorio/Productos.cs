@@ -47,7 +47,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
             var losProductos = _Contexto.Product.Where(p => p.Name.Contains(laHilera)).ToList();
             return losProductos;
         }
-
+           
         //STHIF ARCE GUERRERO
         /// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
         public IList<Model.Product> BuscarProductoFechaVencimiento(DateTime laFechaVencimiento)
