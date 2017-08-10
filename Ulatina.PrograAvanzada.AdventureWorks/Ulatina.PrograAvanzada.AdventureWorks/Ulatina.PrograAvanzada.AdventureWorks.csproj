@@ -270,6 +270,8 @@
     <Content Include="Views\Products\MiListaPorFechaVencimientoIndex.cshtml" />
     <Content Include="Views\Products\MiListaContienenReviewIndex.cshtml" />
     <Content Include="Views\Products\MiListaPorNombreSubcategoriaIndex.cshtml" />
+    <Content Include="Views\Products\MiListaPorColorIndex.cshtml" />
+    <Content Include="Views\Products\MiListaDePorductoPorModeloIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
