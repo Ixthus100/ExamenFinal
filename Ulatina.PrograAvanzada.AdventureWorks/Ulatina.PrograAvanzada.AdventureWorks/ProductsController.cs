@@ -40,7 +40,6 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
         public ActionResult MiListaPorFechaVencimientoIndex()
         {
             DateTime laFechaVencimiento = DateTime.Now.Date;
-
             var laAccion = new AW.Wcf.Acciones.Productos();
             var products = laAccion.BuscarProductoFechaVencimiento(laFechaVencimiento);
             return View(products.ToList());
@@ -48,7 +47,13 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
 
         //PABLO FERNANDEZ
         /// 3.  Lista de artículos de un color determinado
-
+        public ActionResult MiListaPorColorIndex()
+        {
+            string elColor = "Grey";
+            var laAccion = new AW.Wcf.Acciones.Productos();
+            var products = laAccion.EncontarProductoPorColorDeterminado(elColor);
+            return View(products.ToList());
+        }
 
 
         //JOSE CHAVES 
@@ -66,35 +71,32 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
         public ActionResult MiListaPorCategoriaIndex()
 		{
 			string laCategoria = "Bike";
-
-			var laAccion = new AW.Wcf.Acciones.Productos();
+            var laAccion = new AW.Wcf.Acciones.Productos();
 			var products = laAccion.BuscarProductoNombreCategoria(laCategoria);
 			return View(products.ToList());
 		}
 
         //PABLO FERNANDEZ
         /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
-        
+        public ActionResult MiListaPorNombreModeloIndex()
+        {
+            string laHilera = "Vest";
+            var laAccion = new AW.Wcf.Acciones.Productos();
+            var products = laAccion.EncontarProductosPorModelo(laHilera);
+            return View(products.ToList());
+        }
 
 
         //STHIF ARCE GUERRERO
         /// 7.  lista de artículos que contengan al menos un review.
         public ActionResult MiListaContienenReviewIndex()
 		{
-
-			var laAccion = new AW.Wcf.Acciones.Productos();
+            var laAccion = new AW.Wcf.Acciones.Productos();
 			var products = laAccion.BuscarProductoContengaReview();
 			return View(products.ToList());
+  		}
 
-		}
-
-
-
-
-
-
-
-
+        
 		// GET: Products/Details/5
 		public ActionResult MisDetallesPorProductNumber(string productNumber)
         {

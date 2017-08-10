@@ -60,29 +60,23 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
         /// 3.  Lista de artículos de un color determinado
         public IList<Model.Product> EncontarProductoPorColorDeterminado(string elColor)
         {
-            // Model.Product elProducto = new Model.Product();
-            var LosProductos = _Contexto.Product.Where(p => p.Color.Contains(elColor)).ToList();
-            //elProducto = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.p);
-            return LosProductos;
-
+            var losProductos = _Contexto.Product.Where(p => p.Color.Contains(elColor)).ToList();
+            return losProductos;
         }
 
         //JOSE CHAVES 
         /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
         public IList<Model.Product> EncontrarProductosPorHileraSubcategoria(string laHilera)
         {
-            /*var losProductos = _Contexto.Product.Join(_Contexto.ProductSubcategory, product => product.ProductSubcategoryID, subcategory => subcategory.ProductSubcategoryID, (product, subcategory) => product).Where(products => products.ProductSubcategory.Name.Contains(laHilera)).ToList(); */
             var losProductos = _Contexto.Product.Include("ProductSubcategory").Include("ProductModel").Include("ProductReview").Include("ProductSubcategory.ProductCategory").Where(p => p.ProductSubcategory.Name.Contains(laHilera)).ToList();
             return losProductos;
         }
-
-
+        
         //STHIF ARCE GUERRERO
         /// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
         public IList<Model.Product> BuscarProductoNombreCategoria(string laCategoria)
 		{
-
-			var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.ProductSubcategory.ProductCategory.Name.Contains(laCategoria)).ToList();
+            var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.ProductSubcategory.ProductCategory.Name.Contains(laCategoria)).ToList();
 			return LosProductos;
 
 		}
@@ -91,12 +85,10 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
         /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
         public IList<Model.Product> BuscarPorductosPorModelo(string _modelo)
         {
-            //var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Include(" ProductReview").Include("ProductSubCategory.ProductCategory").Where(p => p.ProductSubcategory.ProductCategory.Name.Contains(_modelo)).ToList();
             var LosProductos = _Contexto.Product.Include("productSubCategory").Include("ProductModel").Where(p => p.ProductModel.Name.Contains(_modelo)).ToList();
             return LosProductos;
         }
-
-
+        
         //STHIF ARCE GUERRERO
         /// 7.  lista de artículos que contengan al menos un review
         public IList<Model.Product> BuscarProductoContengaReview()
@@ -106,7 +98,5 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 			return losProductos;
 
 		}
-
-
 	}
 }
