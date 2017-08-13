@@ -39,6 +39,29 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
             return losProductos;
         }
 
+        //////////
+        ///            
+        ///
+        /////////
+        ///
+        ///
+        //////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //JOSE CHAVES
         /// 1.  Lista de artículos que contienen una hilera determinada en el nombre.

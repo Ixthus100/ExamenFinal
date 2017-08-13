@@ -12,22 +12,26 @@ namespace Ulatina.PrograAvanzada.AW.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductModel
+    public partial class SalesPerson
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductModel()
+        public SalesPerson()
         {
-            this.Product = new HashSet<Product>();
+            this.SalesOrderHeader = new HashSet<SalesOrderHeader>();
         }
     
-        public int ProductModelID { get; set; }
-        public string Name { get; set; }
-        public string CatalogDescription { get; set; }
-        public string Instructions { get; set; }
+        public int BusinessEntityID { get; set; }
+        public Nullable<int> TerritoryID { get; set; }
+        public Nullable<decimal> SalesQuota { get; set; }
+        public decimal Bonus { get; set; }
+        public decimal CommissionPct { get; set; }
+        public decimal SalesYTD { get; set; }
+        public decimal SalesLastYear { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
+        public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<SalesOrderHeader> SalesOrderHeader { get; set; }
     }
 }

@@ -65,6 +65,12 @@
       <DependentUpon>AdventureWorks2014.edmx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Employee.cs">
+      <DependentUpon>AdventureWorks2014.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>AdventureWorks2014.tt</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>AdventureWorks2014.tt</DependentUpon>
     </Compile>
@@ -81,6 +87,15 @@
       <DependentUpon>AdventureWorks2014.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesOrderDetail.cs">
+      <DependentUpon>AdventureWorks2014.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderHeader.cs">
+      <DependentUpon>AdventureWorks2014.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPerson.cs">
+      <DependentUpon>AdventureWorks2014.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="AdventureWorks2014.edmx">
