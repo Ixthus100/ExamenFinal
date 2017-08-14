@@ -17,15 +17,15 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
         // Consulta A
         public ActionResult RangoDeFechaDeLaOrdenIndex()
         {
-            var fechaInicial = Convert.ToDateTime("2011-07-20");
-            var fechaFinal = Convert.ToDateTime("2011-07-21");
+            var fechaInicial = Convert.ToDateTime("2011-06-03");
+            var fechaFinal = Convert.ToDateTime("2011-06-06");
             var laAccion = new AW.Wcf.Acciones.SalesOrderHeader();
             var facturas = laAccion.RangoDeFechaDeLaOrden(fechaInicial, fechaFinal);
             return View(facturas.ToList());
         }
 
         // Consulta B
-        public ActionResult RangoDeTotal()
+        public ActionResult RangoDeTotalIndex()
         {
             decimal totalInicial = 10000;
             decimal totalFinal = (decimal)14999.99;
@@ -35,7 +35,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
         }
 
         // Consulta C
-        public ActionResult ListaFacturasPorDetalleYDescuento()
+        public ActionResult ListaFacturasPorDetalleYDescuentoIndex()
         {
             decimal descuentoTotal = (decimal)399.99;
             var laAccion = new AW.Wcf.Acciones.SalesOrderHeader();
@@ -44,7 +44,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
         }
 
         // Consulta D
-        public ActionResult ListaDeFacturasPorRango()
+        public ActionResult ListaDeFacturasPorRangoIndex()
         {
             int cantidadMenor = 10;
             int cantidadMayor = 15;
@@ -54,7 +54,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
         }
 
         // Consulta E
-        public ActionResult ListaGeneroEspecificoVendedor()
+        public ActionResult ListaGeneroEspecificoVendedorIndex()
         {
             string genero = "F";
             var laAccion = new AW.Wcf.Acciones.SalesOrderHeader();
@@ -63,7 +63,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
         }
 
         // Consulta F
-        public ActionResult ListaFacturasDeVendedorPorEdad()
+        public ActionResult ListaFacturasDeVendedorPorEdadIndex()
         {
             int edadMenor = 30;
             int edadMayor = 40;
@@ -72,8 +72,8 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
             return View(facturas.ToList());
         }
 
-        // Consulta F
-        public ActionResult ListaFacturasDeVendedoresRangoAntiguedad()
+        // Consulta G
+        public ActionResult ListaFacturasDeVendedoresRangoAntiguedadIndex()
         {
             int antiguedadMayor = 2;
             int antiguedadMenor = 5;
@@ -83,7 +83,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
         }
 
         // Consulta H
-        public ActionResult ListaFacturasVendedoresTextoEspecificoApellidoNombre()
+        public ActionResult ListaFacturasVendedoresTextoEspecificoApellidoNombreIndex()
         {
             string laHilera  = "Miller";
             var laAccion = new AW.Wcf.Acciones.SalesOrderHeader();

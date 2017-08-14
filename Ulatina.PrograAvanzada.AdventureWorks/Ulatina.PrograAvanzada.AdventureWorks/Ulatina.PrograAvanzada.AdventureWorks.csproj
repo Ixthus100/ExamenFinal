@@ -290,14 +290,14 @@
     <Content Include="Views\SalesOrderHeaders\Details.cshtml" />
     <Content Include="Views\SalesOrderHeaders\Edit.cshtml" />
     <Content Include="Views\SalesOrderHeaders\Index.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\RangoDeFechaDeLaOrden.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\RangoDeTotal.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\ListaFacturasPorDetalleYDescuento.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\ListaDeFacturasPorRango.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\ListaGeneroEspecificoVendedor.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\ListaFacturasDeVendedorPorEdad.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\ListaFacturasDeVendedoresRangoAntiguedad.cshtml" />
-    <Content Include="Views\SalesOrderHeaders\ListaFacturasVendedoresTextoEspecificoApellidoNombre.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\RangoDeFechaDeLaOrdenIndex.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\RangoDeTotalIndex.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasPorDetalleYDescuentoIndex.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaDeFacturasPorRangoIndex.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaGeneroEspecificoVendedorIndex.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasDeVendedorPorEdadIndex.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasDeVendedoresRangoAntiguedadIndex.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasVendedoresTextoEspecificoApellidoNombreIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

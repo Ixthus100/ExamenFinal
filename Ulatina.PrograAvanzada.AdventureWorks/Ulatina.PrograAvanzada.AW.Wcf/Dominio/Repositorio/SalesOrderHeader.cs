@@ -15,51 +15,55 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 		// consulta A
 		public IList<Model.SalesOrderHeader> RangoDeFechaDeLaOrden(DateTime fecha1 , DateTime fecha2)
 		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
+            var lasOrdenes = _Contexto.SalesOrderHeader.Where(p => fecha1 >= p.OrderDate && p.OrderDate <= fecha2).ToList();
+            return lasOrdenes;
 		}
 		// consulta B
-		public IList<Model.SalesOrderHeader> RangoDeTotal(decimal total1, decimal total2)
+		public IList<Model.SalesOrderDetail> RangoDeTotal(decimal total1, decimal total2)
 		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
-		}
+            var lasOrdenes = _Contexto.SalesOrderDetail.Where(p => total1 >= p.LineTotal && p.LineTotal <= total2).ToList();
+            return lasOrdenes;
+        }
 		// consulta C
-		public IList<Model.SalesOrderHeader> ListaFacturaPorDetalleYDescuento(decimal descuento)
+		public IList<Model.SalesOrderDetail> ListaFacturaPorDetalleYDescuento(decimal descuento)
 		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
-		}
-		// consulta D
-		public IList<Model.SalesOrderHeader> ListaGeneroEspecificoVendedor(string genero)
-		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
-		}
-		// consulta E
-		public IList<Model.SalesOrderHeader> ListaFacturasDeVendedoresRangoAntiguedad(int antiguedad1, int antiguedad2)
-		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
-		}
-		// consulta F
-		public IList<Model.SalesOrderHeader> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string palabra)
-		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
-		}
-		// consulta G
+            var LasOrdenes = _Contexto.SalesOrderDetail.Where(p => descuento >= p.Discount).ToList();
+            return LasOrdenes;
+        }
+        // consulta D
+        public IList<Model.SalesOrderDetail> ListaDeFacturasPorRango(int Cantidad1, int cantidad2)
+        {
+            var lasOrdenes = _Contexto.SalesOrderDetail.Where(p => Cantidad1 >= p.OrderQty && p.OrderQty <= cantidad2).ToList();
+            return lasOrdenes;
+        }
 
-		public IList<Model.SalesOrderHeader> ListaDeFacturasPorEdad(int edad1, int edad2)
+        // consulta E
+        public IList<Model.Employee> ListaGeneroEspecificoVendedor(string genero)
 		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
-		}
-		// consulta H
-		public IList<Model.SalesOrderHeader> ListaDeFacturasPorRango(int Cantidad1, int cantidad2)
+            var LasOrdenes = _Contexto.Employee.Where(p => p.Gender.Contains(genero)).ToList();
+            return LasOrdenes;
+        }
+		
+		// consulta F
+        public IList<Model.SalesOrderHeader> ListaDeFacturasPorEdad(int edad1, int edad2)
 		{
-			//var LosProductos = _Contexto.SalesOrderHeader.Where(p => _fecha <= p.DiscontinuedDate).ToList();
-			return null;
-		}
-	}
+
+            var LasOrdenes = _Contexto.SalesOrderHeader.Include("SalesPerson").Include("Employee").Where(p => edad1 <= p.SalesPerson.Employee.EmployeeAge && p.SalesPerson.Employee.EmployeeAge<= edad2).ToList();
+            return LasOrdenes;
+        }
+        // consulta G
+        public IList<Model.SalesOrderHeader> ListaFacturasDeVendedoresRangoAntiguedad(int antiguedad1, int antiguedad2)
+        {
+            var LasOrdenes = _Contexto.SalesOrderHeader.Include("SalesPerson").Include("Employee").Where(p => antiguedad1 <= p.SalesPerson.Employee.YearsContracted && p.SalesPerson.Employee.YearsContracted <= antiguedad2).ToList();
+            return LasOrdenes;
+        }
+        // consulta H
+        public IList<Model.SalesOrderHeader> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string palabra)
+        {
+
+            var LasOrdenes = _Contexto.SalesOrderHeader.Include("SalesPerson").Include("Employee").Include("Person").Include("Employee").Where(p => p.SalesPerson.Employee.Person.FullName.Contains(palabra)).ToList();
+            return LasOrdenes;
+        }
+
+    }
 }
