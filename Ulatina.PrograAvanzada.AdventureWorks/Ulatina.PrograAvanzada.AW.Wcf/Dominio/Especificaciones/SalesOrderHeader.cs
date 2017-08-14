@@ -15,8 +15,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Especificaciones
 		{
 			var ElRepositorio = new Repositorio.SalesOrderHeader();
 			var lasSalesOrden = ElRepositorio.RangoDeFechaDeLaOrden(fecha1,fecha2);
-
-			return lasSalesOrden;
+            return lasSalesOrden;
 		}
 		// consulta B
 		public IList<Model.SalesOrderHeader> RangoDeTotal(decimal total1, decimal total2)

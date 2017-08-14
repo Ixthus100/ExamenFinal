@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
 {
-	internal class SalesOrderHeader
+	public class SalesOrderHeader
 	{
 		public SalesOrderHeader()
 		{

@@ -35,6 +35,6 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public virtual DbSet<SalesOrderDetail> SalesOrderDetail { get; set; }
         public virtual DbSet<SalesOrderHeader> SalesOrderHeader { get; set; }
         public virtual DbSet<SalesPerson> SalesPerson { get; set; }
-        public virtual DbSet<vPersonFullName> vPersonFullName { get; set; }
+        //public virtual DbSet<vPersonFullName> vPersonFullName { get; set; }
     }
 }

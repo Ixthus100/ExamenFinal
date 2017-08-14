@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 {
 	internal class SalesOrderHeader
 	{
-		public SalesOrderHeader()
+        static Model.AdventureWorks2014Entities _Contexto = new Model.AdventureWorks2014Entities();
+
+
+        public SalesOrderHeader()
 		{
 		}
 		// consulta A
