@@ -116,7 +116,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 		}
 
 		// consulta B
-		public IList<Model.SalesOrderHeader> RangoDeTotal(decimal total1 , decimal total2)
+		public IList<Model.SalesOrderDetail> RangoDeTotal(decimal total1 , decimal total2)
         {
             var LaAccion = new Acciones.SalesOrderHeader();
             var lasSalesOrden = LaAccion.RangoDeTotal(total1,total2);
@@ -124,7 +124,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
         }
 
         // consulta c
-        public IList<Model.SalesOrderHeader> ListaFacturasPorDetalleYDescuento(decimal _descuento)
+        public IList<Model.SalesOrderDetail> ListaFacturasPorDetalleYDescuento(decimal _descuento)
         {
             var LaAccion = new Acciones.SalesOrderHeader();
             var lasSalesOrden = LaAccion.ListaFacturasPorDetalleYDescuento(_descuento);
@@ -133,7 +133,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 
         // CONSULTA D
 
-        public IList<Model.SalesOrderHeader> ListaFacturasPorRango(int Cantidad1 , int cantidad2)
+        public IList<Model.SalesOrderDetail> ListaFacturasPorRango(int Cantidad1 , int cantidad2)
         {
             var LaAccion = new Acciones.SalesOrderHeader();
             var lasSalesOrden = LaAccion.ListaDeFacturasPorRango(Cantidad1,cantidad2);
@@ -143,7 +143,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 
         // consulta e 
 
-        public IList<Model.SalesOrderHeader> ListaGeneroEspecificoVendedor(string genero)
+        public IList<Model.Employee> ListaGeneroEspecificoVendedor(string genero)
         {
             var LaAccion = new Acciones.SalesOrderHeader();
             var lasSalesOrden = LaAccion.ListaGeneroEspecificoVendedor(genero);
