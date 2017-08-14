@@ -48,13 +48,13 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
         public IList<Model.SalesOrderHeader> ListaDeFacturasPorEdad(int edad1, int edad2)
 		{
 
-            var LasOrdenes = _Contexto.SalesOrderHeader.Include("SalesPerson").Include("Employee").Where(p => edad1 <= p.SalesPerson.Employee.EmployeeAge && p.SalesPerson.Employee.EmployeeAge<= edad2).ToList();
+            var LasOrdenes = _Contexto.SalesOrderHeader.Include("SalesPerson").Include("Employee").Where(p => edad1 >= p.SalesPerson.Employee.EmployeeAge && p.SalesPerson.Employee.EmployeeAge<= edad2).ToList();
             return LasOrdenes;
         }
         // consulta G
         public IList<Model.SalesOrderHeader> ListaFacturasDeVendedoresRangoAntiguedad(int antiguedad1, int antiguedad2)
         {
-            var LasOrdenes = _Contexto.SalesOrderHeader.Include("SalesPerson").Include("Employee").Where(p => antiguedad1 <= p.SalesPerson.Employee.YearsContracted && p.SalesPerson.Employee.YearsContracted <= antiguedad2).ToList();
+            var LasOrdenes = _Contexto.SalesOrderHeader.Include("SalesPerson").Include("Employee").Where(p => antiguedad1 >= p.SalesPerson.Employee.YearsContracted && p.SalesPerson.Employee.YearsContracted <= antiguedad2).ToList();
             return LasOrdenes;
         }
         // consulta H

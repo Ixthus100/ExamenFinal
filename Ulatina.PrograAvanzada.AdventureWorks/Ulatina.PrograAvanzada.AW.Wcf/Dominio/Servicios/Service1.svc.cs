@@ -268,5 +268,15 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+        IList<SalesOrderDetail> IService1.RangoDeTotal(decimal _total)
+        {
+            throw new NotImplementedException();
+        }
+
+        IList<SalesOrderDetail> IService1.ListaFacturasPorRango(string _detalle)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
