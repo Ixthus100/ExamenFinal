@@ -71,36 +71,36 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
             
         // consulta A
         [OperationContract]
-        IList<Model.SalesOrderDetail> RangoDeFechaDeLaOrden(DateTime _fecha);
+        IList<Model.SalesOrderHeader> RangoDeFechaDeLaOrden(DateTime _fecha);
 
         // consulta B
         [OperationContract]
-        IList<Model.SalesOrderDetail> RangoDeTotal(decimal _total);
+        IList<Model.SalesOrderHeader> RangoDeTotal(decimal _total);
 
 
         // consulta C
         [OperationContract]
-        IList<Model.SalesOrderDetail> ListaFacturasPorDetalleYDescuento(decimal _descuento);
+        IList<Model.SalesOrderHeader> ListaFacturasPorDetalleYDescuento(decimal _descuento);
 
         // consulta D
         [OperationContract]
-        IList<Model.SalesOrderDetail> ListaFacturasPorRango(string _detalle);
+        IList<Model.SalesOrderHeader> ListaFacturasPorRango(string _detalle);
 
         // consulta E
         [OperationContract]
-        IList<Model.Employee> ListaGeneroEspecificoVendedor(string _genero);
+        IList<Model.SalesOrderHeader> ListaGeneroEspecificoVendedor(string _genero);
 
         // consulta F
         [OperationContract]
-        IList<Model.Employee> ListaFacturasDeVendedorPorEdad(decimal _edad);
+        IList<Model.SalesOrderHeader> ListaFacturasDeVendedorPorEdad(decimal _edad);
 
         // consulta G 
         [OperationContract]
-        IList<Model.Employee> ListaFacturasDeVendedoresRangoAntiguedad(DateTime _fecha);
+        IList<Model.SalesOrderHeader> ListaFacturasDeVendedoresRangoAntiguedad(DateTime _fecha);
 
         // consulta H 
         [OperationContract]
-        IList<Model.Person> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string _palabra);
+        IList<Model.SalesOrderHeader> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string _palabra);
     }
 
 

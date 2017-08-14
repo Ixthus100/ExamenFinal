@@ -26,12 +26,6 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
 
 
 
-
-
-
-
-
-
         // GET: SalesOrderHeaders
         public ActionResult Index()
         {

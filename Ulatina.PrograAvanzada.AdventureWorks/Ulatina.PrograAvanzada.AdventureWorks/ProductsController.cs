@@ -15,106 +15,106 @@ namespace Ulatina.PrograAvanzada.AdventureWorks
         private AdventureWorks2014EntitiesContext db = new AdventureWorks2014EntitiesContext();
 
         // GET: Products
-        public ActionResult Index()
-        {
-            decimal elPrecioInferior = 20;
-            decimal elPrecioSuperior = (decimal)55.6;
-            var laAccion = new AW.Wcf.Acciones.Productos();
-            var products = laAccion.BuscarProductoPorRangoDePrecio(elPrecioInferior, elPrecioSuperior);
-            //var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory);
-            return View(products.ToList());
-        }
+  //      public ActionResult Index()
+  //      {
+  //          decimal elPrecioInferior = 20;
+  //          decimal elPrecioSuperior = (decimal)55.6;
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+  //          var products = laAccion.BuscarProductoPorRangoDePrecio(elPrecioInferior, elPrecioSuperior);
+  //          //var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory);
+  //          return View(products.ToList());
+  //      }
 
-        //JOSE CHAVES
-        /// 1. Lista de artículos que contienen una hilera determinada en el nombre.
-        public ActionResult MiListaPorNombreIndex()
-        {
-            string laHilera = "Bike";
-            var laAccion = new AW.Wcf.Acciones.Productos();
-            var products = laAccion.EncontrarProductoPorHileraNombre(laHilera);
-            return View(products.ToList());
-        }
+  //      //JOSE CHAVES
+  //      /// 1. Lista de artículos que contienen una hilera determinada en el nombre.
+  //      public ActionResult MiListaPorNombreIndex()
+  //      {
+  //          string laHilera = "Bike";
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+  //          var products = laAccion.EncontrarProductoPorHileraNombre(laHilera);
+  //          return View(products.ToList());
+  //      }
 
-        //STHIF ARCE GUERRERO
-        /// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
-        public ActionResult MiListaPorFechaVencimientoIndex()
-        {
-            DateTime laFechaVencimiento = DateTime.Now.Date;
-            var laAccion = new AW.Wcf.Acciones.Productos();
-            var products = laAccion.BuscarProductoFechaVencimiento(laFechaVencimiento);
-            return View(products.ToList());
-        }
+  //      //STHIF ARCE GUERRERO
+  //      /// 2.  lista de artículos cuya fecha de vencimiento sea menor o igual a una determinada.
+  //      public ActionResult MiListaPorFechaVencimientoIndex()
+  //      {
+  //          DateTime laFechaVencimiento = DateTime.Now.Date;
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+  //          var products = laAccion.BuscarProductoFechaVencimiento(laFechaVencimiento);
+  //          return View(products.ToList());
+  //      }
 
-        //PABLO FERNANDEZ
-        /// 3.  Lista de artículos de un color determinado
-        public ActionResult MiListaPorColorIndex()
-        {
-            string elColor = "Grey";
-            var laAccion = new AW.Wcf.Acciones.Productos();
-            var products = laAccion.EncontarProductoPorColorDeterminado(elColor);
-            return View(products.ToList());
-        }
-
-
-        //JOSE CHAVES 
-        /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
-        public ActionResult MiListaPorNombreSubcategoriaIndex()
-        {
-            string laHilera = "Mountain";
-            var laAccion = new AW.Wcf.Acciones.Productos();
-            var products = laAccion.EncontrarProductosPorHileraSubcategoria(laHilera);
-            return View(products.ToList());
-        }
-
-        //STHIF ARCE GUERRERO
-        /// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
-        public ActionResult MiListaPorCategoriaIndex()
-		{
-			string laCategoria = "Bike";
-            var laAccion = new AW.Wcf.Acciones.Productos();
-			var products = laAccion.BuscarProductoNombreCategoria(laCategoria);
-			return View(products.ToList());
-		}
-
-        //PABLO FERNANDEZ
-        /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
-        public ActionResult MiListaPorNombreModeloIndex()
-        {
-            string laHilera = "Vest";
-            var laAccion = new AW.Wcf.Acciones.Productos();
-            var products = laAccion.EncontarProductosPorModelo(laHilera);
-            return View(products.ToList());
-        }
+  //      //PABLO FERNANDEZ
+  //      /// 3.  Lista de artículos de un color determinado
+  //      public ActionResult MiListaPorColorIndex()
+  //      {
+  //          string elColor = "Grey";
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+  //          var products = laAccion.EncontarProductoPorColorDeterminado(elColor);
+  //          return View(products.ToList());
+  //      }
 
 
-        //STHIF ARCE GUERRERO
-        /// 7.  lista de artículos que contengan al menos un review.
-        public ActionResult MiListaContienenReviewIndex()
-		{
-            var laAccion = new AW.Wcf.Acciones.Productos();
-			var products = laAccion.BuscarProductoContengaReview();
-			return View(products.ToList());
-  		}
+  //      //JOSE CHAVES 
+  //      /// 4.  Lista de artículos cuyo nombre de la subcategoria contenga una hilera determinada
+  //      public ActionResult MiListaPorNombreSubcategoriaIndex()
+  //      {
+  //          string laHilera = "Mountain";
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+  //          var products = laAccion.EncontrarProductosPorHileraSubcategoria(laHilera);
+  //          return View(products.ToList());
+  //      }
+
+  //      //STHIF ARCE GUERRERO
+  //      /// 5.  lista de artículos cuyo nombre de la categoría contenga una hilera determinada.
+  //      public ActionResult MiListaPorCategoriaIndex()
+		//{
+		//	string laCategoria = "Bike";
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+		//	var products = laAccion.BuscarProductoNombreCategoria(laCategoria);
+		//	return View(products.ToList());
+		//}
+
+  //      //PABLO FERNANDEZ
+  //      /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
+  //      public ActionResult MiListaPorNombreModeloIndex()
+  //      {
+  //          string laHilera = "Vest";
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+  //          var products = laAccion.EncontarProductosPorModelo(laHilera);
+  //          return View(products.ToList());
+  //      }
+
+
+  //      //STHIF ARCE GUERRERO
+  //      /// 7.  lista de artículos que contengan al menos un review.
+  //      public ActionResult MiListaContienenReviewIndex()
+		//{
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+		//	var products = laAccion.BuscarProductoContengaReview();
+		//	return View(products.ToList());
+  //		}
 
         
-		// GET: Products/Details/5
-		public ActionResult MisDetallesPorProductNumber(string productNumber)
-        {
-            if (productNumber == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+		//// GET: Products/Details/5
+		//public ActionResult MisDetallesPorProductNumber(string productNumber)
+  //      {
+  //          if (productNumber == null)
+  //          {
+  //              return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+  //          }
 
-            var laAccion = new AW.Wcf.Acciones.Productos();
-            Product product = laAccion.EncontrarProductoPorNumero(productNumber);
+  //          var laAccion = new AW.Wcf.Acciones.Productos();
+  //          Product product = laAccion.EncontrarProductoPorNumero(productNumber);
 
-            //Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-        }
+  //          //Product product = db.Products.Find(id);
+  //          if (product == null)
+  //          {
+  //              return HttpNotFound();
+  //          }
+  //          return View(product);
+  //      }
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
