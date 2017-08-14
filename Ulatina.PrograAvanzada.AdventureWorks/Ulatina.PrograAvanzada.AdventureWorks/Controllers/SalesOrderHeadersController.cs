@@ -90,8 +90,7 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
             var facturas = laAccion.ListaFacturasVendedoresTextoEspecificoApellidoNombre(laHilera);
             return View(facturas.ToList());
         }
-
-
+        
         // GET: SalesOrderHeaders
         public ActionResult Index()
         {
