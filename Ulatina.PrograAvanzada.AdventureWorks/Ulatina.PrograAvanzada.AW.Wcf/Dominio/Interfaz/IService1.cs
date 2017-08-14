@@ -64,6 +64,43 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
         /// 7.  lista de artículos que contengan al menos un review.
         [OperationContract]
 		IList<Model.Product> BuscarProductoContegaReview();
+
+
+        // *****************************examen final***************************
+        
+            
+        // consulta A
+        [OperationContract]
+        IList<Model.Product> RangoDeFechaDeLaOrden(DateTime _fecha);
+
+        // consulta B
+        [OperationContract]
+        IList<Model.Product> RangoDeTotal(decimal _total);
+
+
+        // consulta C
+        [OperationContract]
+        IList<Model.Product> ListaFacturasPorDetalleYDescuento(decimal _descuento);
+
+        //consulta d
+        [OperationContract]
+        IList<Model.Product> ListaFacturasPorRango(string _detalle);
+
+        // consulta e 
+        [OperationContract]
+        IList<Model.Product> ListaGeneroEspecificoVendedor(string _genero);
+
+        //consulta f 
+        [OperationContract]
+        IList<Model.Product> ListaFacturasDeVendedorPorEdad(decimal _edad);
+
+        //consulta g 
+        [OperationContract]
+        IList<Model.Product> ListaFacturasDeVendedoresRangoAntiguedad(DateTime _fecha);
+
+        //consulta H 
+        [OperationContract]
+        IList<Model.Product> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string _palabra);
     }
 
 
