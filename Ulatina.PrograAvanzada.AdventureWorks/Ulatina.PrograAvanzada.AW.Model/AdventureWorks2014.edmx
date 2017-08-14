@@ -35,6 +35,8 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
           <Property Name="CurrentFlag" Type="bit" Nullable="false" />
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="EmployeeAge" Type="int" />
+          <Property Name="YearsContracted" Type="int" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -53,6 +55,7 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
           <Property Name="Demographics" Type="xml" />
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -143,6 +146,7 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
           <Property Name="LineTotal" Type="numeric" Precision="38" Scale="6" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="5" />
         </EntityType>
         <EntityType Name="SalesOrderHeader">
           <Key>
@@ -578,6 +582,8 @@ warning 6002: The table/view 'AdventureWorks2014.Person.vPersonFullName' does no
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Person" Relationship="AdventureWorks2014Model.FK_Employee_Person_BusinessEntityID" FromRole="Employee" ToRole="Person" />
           <NavigationProperty Name="SalesPerson" Relationship="AdventureWorks2014Model.FK_SalesPerson_Employee_BusinessEntityID" FromRole="Employee" ToRole="SalesPerson" />
+          <Property Name="EmployeeAge" Type="Int32" />
+          <Property Name="YearsContracted" Type="Int32" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -597,6 +603,7 @@ warning 6002: The table/view 'AdventureWorks2014.Person.vPersonFullName' does no
           <Property Name="rowguid" Type="Guid" Nullable="false" />
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Employee" Relationship="AdventureWorks2014Model.FK_Employee_Person_BusinessEntityID" FromRole="Person" ToRole="Employee" />
+          <Property Name="FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SalesOrderDetail">
           <Key>
@@ -615,6 +622,7 @@ warning 6002: The table/view 'AdventureWorks2014.Person.vPersonFullName' does no
           <Property Name="rowguid" Type="Guid" Nullable="false" />
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="SalesOrderHeader" Relationship="AdventureWorks2014Model.FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID" FromRole="SalesOrderDetail" ToRole="SalesOrderHeader" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="5" />
         </EntityType>
         <EntityType Name="SalesOrderHeader">
           <Key>
@@ -829,6 +837,8 @@ warning 6002: The table/view 'AdventureWorks2014.Person.vPersonFullName' does no
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="AdventureWorks2014Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="YearsContracted" ColumnName="YearsContracted" />
+                <ScalarProperty Name="EmployeeAge" ColumnName="EmployeeAge" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="rowguid" ColumnName="rowguid" />
                 <ScalarProperty Name="CurrentFlag" ColumnName="CurrentFlag" />
@@ -850,6 +860,7 @@ warning 6002: The table/view 'AdventureWorks2014.Person.vPersonFullName' does no
           <EntitySetMapping Name="Person">
             <EntityTypeMapping TypeName="AdventureWorks2014Model.Person">
               <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="rowguid" ColumnName="rowguid" />
                 <ScalarProperty Name="Demographics" ColumnName="Demographics" />
@@ -869,6 +880,7 @@ warning 6002: The table/view 'AdventureWorks2014.Person.vPersonFullName' does no
           <EntitySetMapping Name="SalesOrderDetail">
             <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesOrderDetail">
               <MappingFragment StoreEntitySet="SalesOrderDetail">
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="rowguid" ColumnName="rowguid" />
                 <ScalarProperty Name="LineTotal" ColumnName="LineTotal" />
