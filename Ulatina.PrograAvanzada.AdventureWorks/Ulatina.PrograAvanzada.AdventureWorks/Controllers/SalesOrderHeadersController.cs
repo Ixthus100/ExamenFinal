@@ -65,8 +65,8 @@ namespace Ulatina.PrograAvanzada.AdventureWorks.Controllers
         // Consulta F
         public ActionResult ListaFacturasDeVendedorPorEdadIndex()
         {
-            int edadMenor = 30;
-            int edadMayor = 40;
+            int edadMenor = 0;
+            int edadMayor = 100;
             var laAccion = new AW.Wcf.Acciones.SalesOrderHeader();
             var facturas = laAccion.ListaFacturasDeVendedorPorEdad(edadMenor, edadMayor);
             return View(facturas.ToList());

@@ -92,7 +92,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 
         // consulta F
         [OperationContract]
-        IList<Model.SalesOrderHeader> ListaFacturasDeVendedorPorEdad(decimal _edad);
+        IList<Model.SalesOrderHeader> ListaFacturasDeVendedorPorEdad(int edad1, int edad2);
 
         // consulta G 
         [OperationContract]
