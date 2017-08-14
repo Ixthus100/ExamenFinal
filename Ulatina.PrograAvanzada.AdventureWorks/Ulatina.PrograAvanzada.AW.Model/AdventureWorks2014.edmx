@@ -189,6 +189,35 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
           <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AdventureWorks2014.Person.vPersonFullName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPersonFullName">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+            <PropertyRef Name="PersonType" />
+            <PropertyRef Name="NameStyle" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="EmailPromotion" />
+            <PropertyRef Name="rowguid" />
+            <PropertyRef Name="ModifiedDate" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+          <Property Name="PersonType" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="NameStyle" Type="bit" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="8" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Suffix" Type="nvarchar" MaxLength="10" />
+          <Property Name="EmailPromotion" Type="int" Nullable="false" />
+          <Property Name="AdditionalContactInfo" Type="xml" />
+          <Property Name="Demographics" Type="xml" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="152" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Employee_Person_BusinessEntityID">
           <End Role="Person" Type="Self.Person" Multiplicity="1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
@@ -299,6 +328,24 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
           <EntitySet Name="SalesOrderDetail" EntityType="Self.SalesOrderDetail" Schema="Sales" store:Type="Tables" />
           <EntitySet Name="SalesOrderHeader" EntityType="Self.SalesOrderHeader" Schema="Sales" store:Type="Tables" />
           <EntitySet Name="SalesPerson" EntityType="Self.SalesPerson" Schema="Sales" store:Type="Tables" />
+          <EntitySet Name="vPersonFullName" EntityType="Self.vPersonFullName" store:Type="Views" store:Schema="Person">
+            <DefiningQuery>SELECT 
+    [vPersonFullName].[BusinessEntityID] AS [BusinessEntityID], 
+    [vPersonFullName].[PersonType] AS [PersonType], 
+    [vPersonFullName].[NameStyle] AS [NameStyle], 
+    [vPersonFullName].[Title] AS [Title], 
+    [vPersonFullName].[FirstName] AS [FirstName], 
+    [vPersonFullName].[MiddleName] AS [MiddleName], 
+    [vPersonFullName].[LastName] AS [LastName], 
+    [vPersonFullName].[Suffix] AS [Suffix], 
+    [vPersonFullName].[EmailPromotion] AS [EmailPromotion], 
+    [vPersonFullName].[AdditionalContactInfo] AS [AdditionalContactInfo], 
+    [vPersonFullName].[Demographics] AS [Demographics], 
+    [vPersonFullName].[rowguid] AS [rowguid], 
+    [vPersonFullName].[ModifiedDate] AS [ModifiedDate], 
+    [vPersonFullName].[FullName] AS [FullName]
+    FROM [Person].[vPersonFullName] AS [vPersonFullName]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Employee_Person_BusinessEntityID" Association="Self.FK_Employee_Person_BusinessEntityID">
             <End Role="Person" EntitySet="Person" />
             <End Role="Employee" EntitySet="Employee" />
@@ -508,6 +555,7 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
             <End Role="SalesPerson" EntitySet="SalesPerson" />
             <End Role="SalesOrderHeader" EntitySet="SalesOrderHeader" />
           </AssociationSet>
+          <EntitySet Name="vPersonFullName" EntityType="AdventureWorks2014Model.vPersonFullName" />
         </EntityContainer>
         <EntityType Name="Employee">
           <Key>
@@ -667,6 +715,33 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vPersonFullName">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+            <PropertyRef Name="PersonType" />
+            <PropertyRef Name="NameStyle" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="EmailPromotion" />
+            <PropertyRef Name="rowguid" />
+            <PropertyRef Name="ModifiedDate" />
+            <PropertyRef Name="FullName" />
+          </Key>
+          <Property Name="BusinessEntityID" Type="Int32" Nullable="false" />
+          <Property Name="PersonType" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="NameStyle" Type="Boolean" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Suffix" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EmailPromotion" Type="Int32" Nullable="false" />
+          <Property Name="AdditionalContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Demographics" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="152" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -851,6 +926,26 @@ warning 6005: The data type 'hierarchyid' is currently not supported for the tar
                 <ScalarProperty Name="Bonus" ColumnName="Bonus" />
                 <ScalarProperty Name="SalesQuota" ColumnName="SalesQuota" />
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPersonFullName">
+            <EntityTypeMapping TypeName="AdventureWorks2014Model.vPersonFullName">
+              <MappingFragment StoreEntitySet="vPersonFullName">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="Demographics" ColumnName="Demographics" />
+                <ScalarProperty Name="AdditionalContactInfo" ColumnName="AdditionalContactInfo" />
+                <ScalarProperty Name="EmailPromotion" ColumnName="EmailPromotion" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="NameStyle" ColumnName="NameStyle" />
+                <ScalarProperty Name="PersonType" ColumnName="PersonType" />
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
               </MappingFragment>
             </EntityTypeMapping>

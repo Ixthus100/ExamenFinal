@@ -96,6 +96,9 @@
     <Compile Include="SalesPerson.cs">
       <DependentUpon>AdventureWorks2014.tt</DependentUpon>
     </Compile>
+    <Compile Include="vPersonFullName.cs">
+      <DependentUpon>AdventureWorks2014.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="AdventureWorks2014.edmx">
