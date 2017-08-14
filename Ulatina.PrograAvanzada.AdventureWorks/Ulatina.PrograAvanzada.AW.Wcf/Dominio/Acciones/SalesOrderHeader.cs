@@ -21,7 +21,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
 		}
 
 		// consulta B
-		public IList<Model.SalesOrderDetail> RangoDeTotal(decimal total1, decimal total2)
+		public IList<Model.SalesOrderHeader> RangoDeTotal(decimal total1, decimal total2)
 		{
 			var LaEspecificacion = new Especificaciones.SalesOrderHeader();
 			var lasSalesOrden = LaEspecificacion.RangoDeTotal(total1,total2);
@@ -29,7 +29,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
 		}
 
 		// consulta C
-		public IList<Model.SalesOrderDetail> ListaFacturasPorDetalleYDescuento(decimal descuento)
+		public IList<Model.SalesOrderHeader> ListaFacturasPorDetalleYDescuento(decimal descuento)
 		{
 
 			var LaEspecificacion = new Especificaciones.SalesOrderHeader();
@@ -37,14 +37,14 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
 			return lasSalesOrden;
 		}
 		// consulta D
-		public IList<Model.SalesOrderDetail> ListaDeFacturasPorRango(int Cantidad1, int cantidad2)
+		public IList<Model.SalesOrderHeader> ListaDeFacturasPorRango(int Cantidad1, int cantidad2)
 		{
 			var LaEspecificacion = new Especificaciones.SalesOrderHeader();
 			var lasSalesOrden = LaEspecificacion.ListaDeFacturasPorRango(Cantidad1,cantidad2);
 			return lasSalesOrden;
 		}
 		// consulta E
-		public IList<Model.Employee> ListaGeneroEspecificoVendedor(string genero)
+		public IList<Model.SalesOrderHeader> ListaGeneroEspecificoVendedor(string genero)
 		{
 			var LaEspecificacion = new Especificaciones.SalesOrderHeader();
 			var lasSalesOrden = LaEspecificacion.ListaGeneroEspecificoVendedor(genero);

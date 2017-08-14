@@ -19,26 +19,26 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
             return lasOrdenes;
 		}
 		// consulta B
-		public IList<Model.SalesOrderDetail> RangoDeTotal(decimal total1, decimal total2)
+		public IList<Model.SalesOrderHeader> RangoDeTotal(decimal total1, decimal total2)
 		{
             var lasOrdenes = _Contexto.SalesOrderDetail.Where(p => total1 >= p.LineTotal && p.LineTotal <= total2).ToList();
             return lasOrdenes;
         }
 		// consulta C
-		public IList<Model.SalesOrderDetail> ListaFacturaPorDetalleYDescuento(decimal descuento)
+		public IList<Model.SalesOrderHeader> ListaFacturaPorDetalleYDescuento(decimal descuento)
 		{
             var LasOrdenes = _Contexto.SalesOrderDetail.Where(p => descuento >= p.Discount).ToList();
             return LasOrdenes;
         }
         // consulta D
-        public IList<Model.SalesOrderDetail> ListaDeFacturasPorRango(int Cantidad1, int cantidad2)
+        public IList<Model.SalesOrderHeader> ListaDeFacturasPorRango(int Cantidad1, int cantidad2)
         {
             var lasOrdenes = _Contexto.SalesOrderDetail.Where(p => Cantidad1 >= p.OrderQty && p.OrderQty <= cantidad2).ToList();
             return lasOrdenes;
         }
 
         // consulta E
-        public IList<Model.Employee> ListaGeneroEspecificoVendedor(string genero)
+        public IList<Model.SalesOrderHeader> ListaGeneroEspecificoVendedor(string genero)
 		{
             var LasOrdenes = _Contexto.Employee.Where(p => p.Gender.Contains(genero)).ToList();
             return LasOrdenes;

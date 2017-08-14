@@ -75,20 +75,20 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 
         // consulta B
         [OperationContract]
-        IList<Model.SalesOrderDetail> RangoDeTotal(decimal _total);
+        IList<Model.SalesOrderHeader> RangoDeTotal(decimal _total);
 
 
         // consulta C
         [OperationContract]
-        IList<Model.SalesOrderDetail> ListaFacturasPorDetalleYDescuento(decimal _descuento);
+        IList<Model.SalesOrderHeader> ListaFacturasPorDetalleYDescuento(decimal _descuento);
 
         // consulta D
         [OperationContract]
-        IList<Model.SalesOrderDetail> ListaFacturasPorRango(string _detalle);
+        IList<Model.SalesOrderHeader> ListaFacturasPorRango(string _detalle);
 
         // consulta E
         [OperationContract]
-        IList<Model.Employee> ListaGeneroEspecificoVendedor(string _genero);
+        IList<Model.SalesOrderHeader> ListaGeneroEspecificoVendedor(string _genero);
 
         // consulta F
         [OperationContract]
