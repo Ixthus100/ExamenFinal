@@ -25,6 +25,7 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public decimal LineTotal { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
+        public Nullable<decimal> Discount { get; set; }
     
         public virtual SalesOrderHeader SalesOrderHeader { get; set; }
     }

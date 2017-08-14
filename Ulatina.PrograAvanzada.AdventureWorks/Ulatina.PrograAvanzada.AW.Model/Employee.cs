@@ -29,6 +29,8 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public bool CurrentFlag { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
+        public Nullable<int> EmployeeAge { get; set; }
+        public Nullable<int> YearsContracted { get; set; }
     
         public virtual Person Person { get; set; }
         public virtual SalesPerson SalesPerson { get; set; }

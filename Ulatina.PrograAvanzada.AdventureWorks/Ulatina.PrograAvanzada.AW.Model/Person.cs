@@ -27,6 +27,7 @@ namespace Ulatina.PrograAvanzada.AW.Model
         public string Demographics { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
+        public string FullName { get; set; }
     
         public virtual Employee Employee { get; set; }
     }
