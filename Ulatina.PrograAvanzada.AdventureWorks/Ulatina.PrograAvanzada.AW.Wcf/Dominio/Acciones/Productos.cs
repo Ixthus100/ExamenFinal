@@ -88,6 +88,72 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Acciones
 
 		}
 
-        
+        // *****************************examen final***************************
+        // numero 1
+
+        public IList<Model.Product> RangoDeFechaDeLaOrden(DateTime _laFecha)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.RangoDeFechaDeLaOrden(_laFecha);
+            return LosProductos;
+        }
+        // numero 2
+
+        public IList<Model.Product> RangoDeTotal(decimal _total)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.RangoDeTotal(_total);
+            return LosProductos;
+        }
+
+        // consulta c 
+        public IList<Model.Product>ListaFacturasPorDetalleYDescuento(decimal _descuento)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.ListaFacturaPorDetalleYDescuento(_descuento);
+            return LosProductos;
+        }
+
+        // consulta d
+        public IList<Model.Product> ListaDeFacturasPorRango(string _detalle)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.ListaDeFacturasPorRango(_detalle);
+            return LosProductos;
+
+        }
+
+        // Consulta e
+
+        public IList<Model.Product> ListaGeneroEspecificoVendedor(string _genero)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.ListaGeneroEspecificoVendedor(_genero);
+            return LosProductos;
+        }
+
+        // consulta F
+        public IList<Model.Product> ListaFacturasDeVendedorPorEdad(decimal _edad)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.ListaFacturasDeVendedorPorEdad(_edad);
+            return LosProductos;
+        }
+
+
+        // consulta G
+        public IList<Model.Product> ListaFacturasDeVendedoresRangoAntiguedad(DateTime _fecha)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.ListaFacturasDeVendedoresRangoAntiguedad( _fecha);
+            return LosProductos;
+        }
+
+        public IList<Model.Product> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string _palabra)
+        {
+            var LaEspecificacion = new Especificaciones.Productos();
+            var LosProductos = LaEspecificacion.ListaFacturasVendedoresTextoEspecificoApellidoNombre(_palabra);
+            return LosProductos;
+        }
     }
 }

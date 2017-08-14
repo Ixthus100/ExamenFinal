@@ -46,23 +46,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
         ///
         ///
         //////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+               
         //JOSE CHAVES
         /// 1.  Lista de artículos que contienen una hilera determinada en el nombre.
         public IList<Model.Product> EncontrarProductoPorHileraNombre(string laHilera)
@@ -104,6 +88,8 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 
 		}
 
+        
+
         //PABLO FERNANDEZ
         /// 6.  Lista de artículos cuyo nombre de la modelo contenga una hilera determinada
         public IList<Model.Product> BuscarPorductosPorModelo(string _modelo)
@@ -111,7 +97,7 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
             var LosProductos = _Contexto.Product.Include("productSubCategory").Include("ProductModel").Where(p => p.ProductModel.Name.Contains(_modelo)).ToList();
             return LosProductos;
         }
-        
+
         //STHIF ARCE GUERRERO
         /// 7.  lista de artículos que contengan al menos un review
         public IList<Model.Product> BuscarProductoContengaReview()
@@ -121,5 +107,78 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Repositorio
 			return losProductos;
 
 		}
-	}
+
+        
+
+        // *****************************examen final***************************
+        // numero 1
+
+        public IList<Model.Product> RangoDeFechaDeLaOrden(DateTime _fecha)
+        {
+            var LosProductos = _Contexto.Product.Where(p => _fecha <= p.DiscontinuedDate).ToList();
+            return LosProductos;
+
+        }
+
+        //numero 2
+
+        public IList<Model.Product> RangoDeTotal(decimal _total)
+        {
+            var LosProductos = _Contexto.Product.Where(p => _total == p.ListPrice).ToList();
+            return LosProductos;
+        }
+
+        
+
+        // consulta c
+        public IList<Model.Product> ListaFacturaPorDetalleYDescuento(decimal _descuento)
+        {
+            var LosProductos = _Contexto.SalesOrderDetail.Include("productSubCategory").Include("ProductDeatil")
+              .Where(p => _descuento == p.UnitPriceDiscount).ToList();
+            //var LosProductos; 
+            //Nota puse null para que no diera error  
+            // el descuento puede que sea bonus 
+            return null;
+        }
+
+
+        // consulta d
+        public IList<Model.Product> ListaDeFacturasPorRango(string _detalle)
+        {
+            var LosProductos = _Contexto.Product.Include("ProductSubCategory").Include("ProductModel").Where(p => p.ProductModel.Name.Contains(_detalle)).ToList();
+            return LosProductos;
+        }
+
+        
+
+        // consulta e 
+
+        public IList<Model.Product> ListaGeneroEspecificoVendedor(string _genero)
+        {
+            var LosProductos = _Contexto.Product.Where(p => p.Name.Contains(_genero)).ToList();
+            //var LosProductos = _Contexto.Employee.Include("Employee").Where(p => p.Person.PersonType.)
+            return LosProductos;
+        }
+        // consulta f 
+        public IList<Model.Product> ListaDeFacturasPorEdad(decimal _edad)
+        {
+           
+            //var LosProductos = _Contexto.SalesPerson.Where(p => p.
+            return null;
+        }
+        // consulta G
+        public IList<Model.Product> ListaFacturasDeVendedoresRangoAntiguedad(DateTime fecha)
+        {
+
+            return null;
+        }
+
+        // consulta H
+        public IList<Model.Product> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string _palabra)
+        {
+            //var LosProductos
+            return null;
+        }
+
+    }
 }

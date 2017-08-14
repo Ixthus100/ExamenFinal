@@ -11,8 +11,9 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-    public class Service1 : IService1
-    {
+    public class Service1
+    // Paulo Nota era: public class Service1 : Service1 
+    {  
         public Model.Product EncontrarProductoPorNumero(string elNumero)
         {
             var laAccion = new Acciones.Productos();
@@ -102,11 +103,77 @@ namespace Ulatina.PrograAvanzada.AW.Wcf
 			return losProductos;
 		}
 
-        
+
+        // *****************************examen final***************************
+        // numero 1
+        public IList<Model.Product> RandoDeFechaDeLaOrden(DateTime _fecha)
+        {
+            var LaAccion = new Acciones.Productos();
+            var losProductos = LaAccion.RangoDeFechaDeLaOrden(_fecha);
+            return losProductos;
+        }
+        // numero 2
+        public IList<Model.Product> RangoDeTotal(decimal _total)
+        {
+            var LaAccion = new Acciones.Productos();
+            var LosProductos = LaAccion.RangoDeTotal(_total);
+            return LosProductos;
+        }
+
+        // consulta c
+        public IList<Model.Product> ListaFacturasPorDetalleYDescuento(decimal _descuento)
+        {
+            var LaAccion = new Acciones.Productos();
+            var LosProductos = LaAccion.ListaFacturasPorDetalleYDescuento(_descuento);
+            return LosProductos;
+        }
+
+        // CONSULTA D
+
+        public IList<Model.Product> ListaFacturasPorRango(string _detalle)
+        {
+            var LaAccion = new Acciones.Productos();
+            var LosProductos = LaAccion.ListaDeFacturasPorRango(_detalle);
+            return LosProductos;
+
+        }
+
+        // consulta e 
+
+        public IList<Model.Product> ListaGeneroEspecificoVendedor(string _genero)
+        {
+            var LaAccion = new Acciones.Productos();
+            var LosProductos = LaAccion.ListaGeneroEspecificoVendedor(_genero);
+            return LosProductos;
+
+        }
+
+        // consulta F
+        public IList<Model.Product> ListaFacturasDeVendedorPorEdad(decimal _edad)
+        {
+            var LaAccion = new Acciones.Productos();
+            var LosProductos = LaAccion.ListaFacturasDeVendedorPorEdad(_edad);
+            return LosProductos;
+        }
+        // consulta g
+        public IList<Model.Product> ListaFacturasDeVendedoresRangoAntiguedad(DateTime _fecha)
+        {
+            var LaAccion = new Acciones.Productos();
+            var LosProductos = LaAccion.ListaFacturasDeVendedoresRangoAntiguedad(_fecha);
+            return LosProductos;
+        }
+        // consulta H
+        public IList<Model.Product> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string _palabra)
+        {
+            var LaAccion = new Acciones.Productos();
+            var LosProductos = LaAccion.ListaFacturasVendedoresTextoEspecificoApellidoNombre(_palabra);
+            return LosProductos;
+        }
 
 
 
-		public string GetData(int value)
+
+        public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }

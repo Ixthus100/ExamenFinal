@@ -87,6 +87,77 @@ namespace Ulatina.PrograAvanzada.AW.Wcf.Especificaciones
 			return losProductos;
 		}
 
-        
+        // *****************************examen final***************************
+        // numero 1
+
+        public IList<Model.Product>RangoDeFechaDeLaOrden(DateTime _fecha)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.RangoDeFechaDeLaOrden(_fecha);
+
+            return LosProductos;
+        }
+
+        // numero 2
+        public IList<Model.Product> RangoDeTotal(decimal _total)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.RangoDeTotal(_total);
+            return LosProductos;
+            ;
+        }
+
+        //consulta c
+        public IList<Model.Product> ListaFacturaPorDetalleYDescuento(decimal _descuento)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.ListaFacturaPorDetalleYDescuento(_descuento);
+            return LosProductos;
+        }
+
+        //consulta d 
+
+
+        public IList<Model.Product> ListaDeFacturasPorRango(string _detalle)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.ListaDeFacturasPorRango(_detalle);
+            return LosProductos;
+            ;
+        }
+
+       
+
+        // consulta E 
+
+        public IList<Model.Product> ListaGeneroEspecificoVendedor(string _genero)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.ListaGeneroEspecificoVendedor(_genero);
+            return LosProductos;
+        }
+
+
+        // consulta F
+        public IList<Model.Product> ListaFacturasDeVendedorPorEdad(decimal _edad)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.ListaDeFacturasPorEdad(_edad);
+            return LosProductos;
+        }
+        // consulta G
+        public IList<Model.Product> ListaFacturasDeVendedoresRangoAntiguedad(DateTime _fecha)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.ListaFacturasDeVendedoresRangoAntiguedad(_fecha);
+            return LosProductos;
+        }
+        // consulta H
+        public IList<Model.Product> ListaFacturasVendedoresTextoEspecificoApellidoNombre(string _palabra)
+        {
+            var ElRepositorio = new Repositorio.Productos();
+            var LosProductos = ElRepositorio.ListaFacturasVendedoresTextoEspecificoApellidoNombre(_palabra);
+            return LosProductos;
+        }
     }
 }
