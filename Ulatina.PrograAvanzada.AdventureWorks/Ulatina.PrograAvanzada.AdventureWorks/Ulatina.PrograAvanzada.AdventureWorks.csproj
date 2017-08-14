@@ -291,6 +291,13 @@
     <Content Include="Views\SalesOrderHeaders\Edit.cshtml" />
     <Content Include="Views\SalesOrderHeaders\Index.cshtml" />
     <Content Include="Views\SalesOrderHeaders\RangoDeFechaDeLaOrden.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\RangoDeTotal.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasPorDetalleYDescuento.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaDeFacturasPorRango.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaGeneroEspecificoVendedor.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasDeVendedorPorEdad.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasDeVendedoresRangoAntiguedad.cshtml" />
+    <Content Include="Views\SalesOrderHeaders\ListaFacturasVendedoresTextoEspecificoApellidoNombre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
